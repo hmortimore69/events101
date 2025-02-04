@@ -8,27 +8,26 @@ function targetTextToConsole(event) {
 }
 
 function tttcAttacher() {
-    const button0 = document.getElementById("button0");
+    const button0 = document.querySelector("#button0");
     button0.addEventListener("click", e => targetTextToConsole(e));
 }
 
 function lovelyParaAttacher() {
-    const para = document.getElementById("thisisalovelyparagraph");
+    const para = document.querySelector("#thisisalovelyparagraph");
     para.addEventListener("click", lovelyToggle);
 }
 
 function lovelyButtonAttacher() {
-    const button1 = document.getElementById("button1");
+    const button1 = document.querySelector("#button1");
     button1.addEventListener("click", lovelyToggle);
 }
 
 function concatAttacher() {
-    const in1 = document.getElementById("in1");
-    const in2 = document.getElementById("in2");
+    const in1 = document.querySelector(`#in1`);
+    const in2 = document.querySelector(`#in2`);
 
     function handler() {
-        const out1 = document.getElementById("out1");
-
+        const out1 = document.querySelector(`#out1`);
         out1.textContent = in1.value + in2.value;
     }
 
@@ -37,31 +36,26 @@ function concatAttacher() {
 }
 
 function snitchAttacher() {
-    const mouseWatcher = document.getElementById("mousewatcher");
+    const mouseWatcher = document.querySelector("#mousewatcher");
     
     mouseWatcher.addEventListener("mouseover", snitchUpdater);
     mouseWatcher.addEventListener("mouseout", snitchUpdater);
 }
 
-function snitchUpdater(e) {
-    const snitch = document.getElementById("snitch");
-    snitch.textContent = e.type === "mouseover" ? "IN" : "OUT";
-}
-
 function reportAttacher() {
-    const mouseReporter = document.getElementById("mousereporter");
+    const mouseReporter = document.querySelector("#mousereporter");
 
     mouseReporter.addEventListener("mousemove", reportUpdater);
 }
 
 function reportUpdater(event) {
-    const report = document.getElementById("report");
+    const report = document.querySelector("#report");
 
     report.textContent = `x: ${event.screenX} y: ${event.screenY}`;
 }
 
 function idValidationAttacher() {
-    const newid = document.getElementById("newid");
+    const newid = document.querySelector("#newid");
 
     newid.addEventListener("input", function () {
         if (newid.value.includes(" ")) {
